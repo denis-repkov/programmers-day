@@ -9,22 +9,21 @@ public class Praktikum {
 
         if (isLeapYear(year)) {
             // выводим, когда празднуем "День программиста"
-            System.out.println("12.09." + year);
+            System.out.println("12.09." + year); // в високосный год
         } else {
-            System.out.println("13.09." + year);
+            System.out.println("13.09." + year); // в не високосный год
         }
     }
 
     public static boolean isLeapYear(int year) {
         // определяем, является ли переданный год високосным
-        if (year % 4 == 0 || year % 400 == 0 ) {
-            if (year % 100 == 0) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
+        if (year % 100 == 0 && year % 400 != 0 ) {
             return false;
+        } else if (year % 4 == 0 || year % 400 == 0)
+        {
+        return true;
+    } else {
+        return false;
         }
     }
 }
